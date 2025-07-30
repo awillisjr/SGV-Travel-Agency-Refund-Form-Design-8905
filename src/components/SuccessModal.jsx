@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiCheckCircle, FiX, FiMail, FiClock, FiDownload } = FiIcons;
+const { FiCheckCircle, FiX, FiMail, FiClock, FiDownload, FiStar } = FiIcons;
 
 const SuccessModal = ({ isOpen, onClose }) => {
   // Function to download a confirmation receipt
@@ -32,7 +32,7 @@ const SuccessModal = ({ isOpen, onClose }) => {
           >
             <div className="text-center">
               <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
-                <SafeIcon icon={FiCheckCircle} className="h-8 w-8 text-green-600" />
+                <SafeIcon icon={FiStar} className="h-8 w-8 text-green-600" />
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -40,19 +40,20 @@ const SuccessModal = ({ isOpen, onClose }) => {
               </h3>
               
               <p className="text-gray-600 mb-6">
-                Your refund request has been received and is being processed. 
+                Your refund request has been received by the StarGaze Vacations team and is being processed. 
                 You'll receive a confirmation email shortly.
               </p>
               
-              <div className="bg-blue-50 rounded-lg p-4 mb-6 text-left">
+              <div className="bg-red-50 rounded-lg p-4 mb-6 text-left">
                 <div className="flex items-center space-x-2 mb-2">
-                  <SafeIcon icon={FiMail} className="text-blue-600" />
-                  <span className="font-medium text-blue-800">What's Next?</span>
+                  <SafeIcon icon={FiMail} className="text-red-600" />
+                  <span className="font-medium text-red-800">What's Next?</span>
                 </div>
-                <ul className="text-sm text-blue-700 space-y-1">
+                <ul className="text-sm text-red-700 space-y-1">
                   <li>• Confirmation email sent to your inbox</li>
                   <li>• Our team will review your request within 2-3 business days</li>
                   <li>• You'll receive updates via email throughout the process</li>
+                  <li>• Questions? Contact us at alfred@stargazevacations.com</li>
                 </ul>
               </div>
               
@@ -61,9 +62,19 @@ const SuccessModal = ({ isOpen, onClose }) => {
                 <span>Processing time: Up to 30 business days</span>
               </div>
               
+              <div className="bg-blue-50 rounded-lg p-3 mb-6 text-center">
+                <p className="text-blue-800 text-sm font-medium">
+                  <SafeIcon icon={FiStar} className="inline mr-1" />
+                  Your Guiding Star for Dream Vacations
+                </p>
+                <p className="text-blue-600 text-xs mt-1">
+                  Thank you for choosing StarGaze Vacations
+                </p>
+              </div>
+              
               <button
                 onClick={handleDownloadReceipt}
-                className="w-full mb-3 bg-white border border-blue-600 text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2"
+                className="w-full mb-3 bg-white border border-red-600 text-red-600 font-medium py-3 px-4 rounded-lg hover:bg-red-50 transition-colors flex items-center justify-center space-x-2"
               >
                 <SafeIcon icon={FiDownload} />
                 <span>Download Receipt</span>
@@ -71,7 +82,7 @@ const SuccessModal = ({ isOpen, onClose }) => {
               
               <button
                 onClick={onClose}
-                className="w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                className="w-full bg-gradient-to-r from-red-600 to-blue-600 text-white font-medium py-3 px-4 rounded-lg hover:from-red-700 hover:to-blue-700 transition-colors"
               >
                 Close
               </button>
