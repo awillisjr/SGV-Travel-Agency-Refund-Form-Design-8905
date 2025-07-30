@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 // Initialize EmailJS with your public key
 // This should be called once when your app initializes
 export const initEmailJS = () => {
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+  emailjs.init("pcTrfIp223awqXgje"); // Replace with your actual EmailJS public key
 };
 
 // Send a refund request email
@@ -11,7 +11,7 @@ export const sendRefundRequestEmail = async (formData) => {
   try {
     // Prepare template parameters for EmailJS
     const templateParams = {
-      to_email: 'support@wanderways.com', // Change this to your actual email
+      to_email: 'info@stargazevacations.com', // Change this to your actual email
       from_name: formData.fullName,
       from_email: formData.email,
       booking_number: formData.bookingNumber,
@@ -23,8 +23,8 @@ export const sendRefundRequestEmail = async (formData) => {
 
     // Send email using EmailJS
     const response = await emailjs.send(
-      'service_wanderways', // Replace with your EmailJS service ID
-      'template_refund_request', // Replace with your EmailJS template ID
+      'service_7q3woie', // Replace with your EmailJS service ID
+      'template_rshhs7f', // Replace with your EmailJS template ID
       templateParams
     );
     
@@ -57,8 +57,8 @@ export const sendCustomerConfirmationEmail = async (customerData) => {
     };
 
     const response = await emailjs.send(
-      'service_wanderways', // Replace with your EmailJS service ID
-      'template_customer_confirmation', // Replace with your EmailJS template ID for customer confirmations
+      'service_7q3woie', // Replace with your EmailJS service ID
+      'template_y9j7wxj', // Replace with your EmailJS template ID for customer confirmations
       templateParams
     );
     
